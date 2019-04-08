@@ -10,7 +10,7 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_type")
     private Products productType;
 

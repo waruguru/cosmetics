@@ -13,15 +13,11 @@ public class Products {
     private  String productName;
     @Column(name="product_type")
     private  String productType;
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "store_name")
-    private  Store store;
 
-    public Products(Long id, String productName, String productType, Store store) {
+    public Products(Long id, String productName, String productType) {
         this.id = id;
         this.productName = productName;
         this.productType = productType;
-        this.store = store;
     }
 
     public Long getId() {
@@ -48,13 +44,6 @@ public class Products {
         this.productType = productType;
     }
 
-    public Store getStore() {
-        return store;
-    }
-
-    public void setStore(Store store) {
-        this.store = store;
-    }
 
     @Override
     public String toString() {
@@ -62,7 +51,6 @@ public class Products {
                 "id=" + id +
                 ", productName='" + productName + '\'' +
                 ", productType='" + productType + '\'' +
-                ", store=" + store +
                 '}';
     }
 }

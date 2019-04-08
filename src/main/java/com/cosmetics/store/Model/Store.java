@@ -16,7 +16,7 @@ public class Store {
     @Column
     private  String address;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_name")
     private Products productName;
 
