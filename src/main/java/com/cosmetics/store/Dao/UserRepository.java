@@ -1,7 +1,10 @@
 package com.cosmetics.store.Dao;
 
-import com.cosmetics.store.Model.Users;
+import com.cosmetics.store.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<Users, Long> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
 }
